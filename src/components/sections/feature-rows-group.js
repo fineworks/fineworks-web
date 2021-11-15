@@ -3,6 +3,8 @@ import classNames from "classnames";
 import Image from "../image";
 import Video from "../elements/video";
 import CustomLink from "../elements/custom-link";
+import ButtonLink from "../elements/button-link";
+import { getButtonAppearance } from "@/utils/button"
 
 const FeatureRowsGroup = ({ data }) => {
   return (
@@ -23,11 +25,13 @@ const FeatureRowsGroup = ({ data }) => {
           <div className="w-full lg:w-6/12 lg:pr-6 text-lg">
             <h3 className="title">{feature.title}</h3>
             <p className="my-6">{feature.description}</p>
-            <CustomLink link={feature.link}>
-              <div className="text-blue-600 with-arrow hover:underline">
-                {feature.link.text}
-              </div>
-            </CustomLink>
+            <div className="flex flex-row flex-wrap gap-4">
+              <CustomLink link={feature.link}>
+                <div className="block w-full lg:w-auto text-center uppercase tracking-wide font-semibold text-base md:text-sm border-2 rounded-md px-6 py-2 bg-primary-600 text-white border-primary-600">
+                  {feature.link.text}
+                </div>
+              </CustomLink>
+            </div>
           </div>
           {/* Media section */}
           <div className="w-full sm:9/12 lg:w-4/12 max-h-full">
